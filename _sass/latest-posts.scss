@@ -1,0 +1,5 @@
+.posts {
+    display: grid;
+    grid-template-columns: repeat(var(--posts-columns, 1), 1fr);
+    gap: 1.5rem;
+}

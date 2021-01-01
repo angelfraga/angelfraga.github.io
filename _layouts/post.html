@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p>{{ page.date | date: "%b %-d, %Y" }} by {{ page.author }}</p>
+            {% for lang in page.languages %}
+            {% capture current_lang %}/{{ page.lang }}/{% endcapture %}
+            {% capture other_lang %}/{{ lang }}/{% endcapture %}
+            <a href="{{ page.url | replace: current_lang , other_lang }}">
+                <span class="fi fi-{{ lang }}"></span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ content }}
+        </div>
+        {% if site.posts %}
+        <div class="col-xs-12 col-md-4">
+            {% include latest-posts.html columns="1" limit=3 %}
+        </div>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand "
+           href="{{ site.baseurl }}/">
+            AFP
+        </a>
+        <ul class="navbar-nav">
+            {% if site.data.navigation %}
+            {% for item in site.data.navigation %}
+            <li class="nav-item">
+                <a href="{{ item.link | prepend: site.baseurl }}"
+                   class="nav-link {% if item.link  == page.url %}active{% endif %}">{{ item.name }}</a>
+            </li>
+            {% endfor %}
+            {% endif %}
+        </ul>
+        <button x-data="{
+            toogle: () => {
+                $store.darkMode = !$store.darkMode;
+                document.body.classList.toggle('dark');
+                localStorage.setItem('darkMode', JSON.stringify($store.darkMode));
+            }
+        }"
+                @click="toogle()"
+                class="btn rounded-circle">
+            <i class="bi text-dark"
+               :class="$store.darkMode ? 'bi-brightness-high' : 'bi-brightness-low-fill'"></i>
+        </button>
+    </div>
+</nav>
+<script>
+    document.addEventListener('alpine:init', () => {
+        const isDark = JSON.parse(localStorage.getItem('darkMode') || false);
+        Alpine.store('darkMode', isDark);
+        if (isDark) {
+            document.body.classList.add('dark');
+        }
+    })
+</script>

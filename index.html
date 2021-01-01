@@ -1,0 +1,36 @@
+---
+layout: page
+hero_image: /assets/images/profile.jpg
+hero_class: hero-image-avatar
+hero_waves: true
+title: Angel Fraga Parodi
+subtitle: Full Stack Software Developer
+show_sidebar: true
+---
+
+<h1>Welcome to my site.</h1>
+
+<p>I'm a <i>Software Developer</i> focused in web technologies with a large experience in front-end frameworks such as
+   Angular.</p>
+
+<p>
+   This site is made with
+   <a href="https://jekyllrb.com"
+      target="jekyllrb">Jekyll</a> 💉,
+   custom
+   <a href="https://getbootstrap.com/"
+      target="bootstrap">bootstrap</a>
+   <i class="bi bi-bootstrap-fill"></i>
+   theme inspired by
+   <a href="https://github.com/chrisrhymes/bulma-clean-theme"
+      target="bulma-clean-theme">bulma-clean-theme</a>
+   and hosted by
+   <a href="https://pages.github.com/"
+      target="pages.github">github pages</a>
+   <i class="bi bi-github"></i>.
+</p>
+
+
+{% if site.posts %}
+{% include latest-posts.html columns="3" limit=6 %}
+{% endif %}
