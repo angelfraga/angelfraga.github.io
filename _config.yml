@@ -1,15 +1,77 @@
+# title: Angel Fraga
+# description: >-
+#   Another Software Developer's Blog
+# url: "https://angelfraga.com/"
+# github_username:  angelfraga
+
+# Site Settings
 title: Angel Fraga
-description: >-
+tagline: Another Software Developer's Blog
+description: >
   Another Software Developer's Blog
 url: "https://angelfraga.com/"
-github_username:  angelfraga
+permalink: pretty
+#  favicon: /assets/icontux.png
 
-# Build settings
-plugins:
-  - jekyll-feed
-theme: bulma-clean-theme
-# global theme(bulma-clean-theme) settings
-show_sidebar: true
-menubar: navmenu
+# disqus:
+#   shortname: techlovers-1
+
+lang: en_US
+
 paginate: 5
 paginate_path: "/blog/page:num"
+
+remote_theme: chrisrhymes/bulma-clean-theme
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - kramdown
+  - rouge
+  - github-pages
+  - jekyll-redirect-from
+
+exclude:
+  - Gemfile
+  - clean-theme.gemspec
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+livereload: true
+
+sass:
+  style: compressed
+  source_dir: _sass
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      show_sidebar: true
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      author: "angelfraga"
+      layout: post
+      image:
+      show_sidebar: true
+
+markdown: kramdown
+highlighter: rouge
+
+footer_menu: menu_footer
+
+collections:
+  products:
+    output: true
+    layout: product
+    image:
+    show_sidebar: false

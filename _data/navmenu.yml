@@ -1,7 +1,5 @@
 - label: Example Menu
   items:
-    - name: Home
-      link: /
     # - name: Pages
     #   link: #
     #   items:
