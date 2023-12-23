@@ -1,0 +1,117 @@
+{
+  "configVersion": 1,
+  "timestamp": 1703424454110,
+  "index": "/assets/party-dart-games/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/party-dart-games/favicon.ico",
+        "/assets/party-dart-games/index.html",
+        "/assets/party-dart-games/main-TGC4EZRW.js",
+        "/assets/party-dart-games/manifest.webmanifest",
+        "/assets/party-dart-games/polyfills-LZBJRJJE.js",
+        "/assets/party-dart-games/styles-22P5WYGW.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/party-dart-games/assets/Oswald-Regular.ttf",
+        "/assets/party-dart-games/assets/app-ui-blue.jpeg",
+        "/assets/party-dart-games/assets/app-ui-dark.jpeg",
+        "/assets/party-dart-games/assets/app-ui-green-official.jpeg",
+        "/assets/party-dart-games/assets/bg-party-banana.jpeg",
+        "/assets/party-dart-games/assets/bg-party-island.jpeg",
+        "/assets/party-dart-games/assets/bg-pub.jpeg",
+        "/assets/party-dart-games/assets/darstboard-svg.jpeg",
+        "/assets/party-dart-games/assets/darstboard.png",
+        "/assets/party-dart-games/assets/dart-board-960_720.png",
+        "/assets/party-dart-games/assets/dart-dark.png",
+        "/assets/party-dart-games/assets/dart.png",
+        "/assets/party-dart-games/assets/dartboard-bg-white.png",
+        "/assets/party-dart-games/assets/dartboard-svg-2.jpeg",
+        "/assets/party-dart-games/assets/dartboard.jpeg",
+        "/assets/party-dart-games/assets/dartboard.svg",
+        "/assets/party-dart-games/assets/icons/icon-128x128.png",
+        "/assets/party-dart-games/assets/icons/icon-144x144.png",
+        "/assets/party-dart-games/assets/icons/icon-152x152.png",
+        "/assets/party-dart-games/assets/icons/icon-192x192.png",
+        "/assets/party-dart-games/assets/icons/icon-384x384.png",
+        "/assets/party-dart-games/assets/icons/icon-512x512.png",
+        "/assets/party-dart-games/assets/icons/icon-72x72.png",
+        "/assets/party-dart-games/assets/icons/icon-96x96.png",
+        "/assets/party-dart-games/assets/logo.jpeg",
+        "/assets/party-dart-games/assets/logo.png",
+        "/assets/party-dart-games/media/logo-FFJYVD4V.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/party-dart-games/assets/Oswald-Regular.ttf": "06aae8f5a28908ba8eca0d5bdc01cedc2a184a5f",
+    "/assets/party-dart-games/assets/app-ui-blue.jpeg": "6a797c21339773ab2f3944652f5f2859b3dbe14a",
+    "/assets/party-dart-games/assets/app-ui-dark.jpeg": "19626b1823f532eb841ea4fe9e1a1f682093e1ef",
+    "/assets/party-dart-games/assets/app-ui-green-official.jpeg": "ec53fd5bdde9399e1412570520f9b967595bfeed",
+    "/assets/party-dart-games/assets/bg-party-banana.jpeg": "21bd2b00b599fa7fcf02dc49a9b583d73743bfda",
+    "/assets/party-dart-games/assets/bg-party-island.jpeg": "e97983b5ba222d0807a482f9e8a32c08636efb06",
+    "/assets/party-dart-games/assets/bg-pub.jpeg": "33a3c47892058377ab6e0d7a05632f97887403f8",
+    "/assets/party-dart-games/assets/darstboard-svg.jpeg": "301e1ad097110befcc64828e08e8b39c198d9acc",
+    "/assets/party-dart-games/assets/darstboard.png": "700fe1198c957266badf1a44e095a1d7f15a8d11",
+    "/assets/party-dart-games/assets/dart-board-960_720.png": "64b36804a0b7db81f14b1a2af3a141506a19c594",
+    "/assets/party-dart-games/assets/dart-dark.png": "a1bda929a27b4551fc355a2d7257c9696111b00f",
+    "/assets/party-dart-games/assets/dart.png": "2d5aba3cc9ec23c93f84e99f2ff48c1254c9d318",
+    "/assets/party-dart-games/assets/dartboard-bg-white.png": "6b7d32acbc6e06121c4e99bcd7c3ddb50c6ffc47",
+    "/assets/party-dart-games/assets/dartboard-svg-2.jpeg": "bfac38b16f6ad7928a65daedc5373ed4c7953a1d",
+    "/assets/party-dart-games/assets/dartboard.jpeg": "975831a9ad473c671359dd8b6abf609ab6dc157f",
+    "/assets/party-dart-games/assets/dartboard.svg": "f39738c97edf1e658c5187d3b50363b6d76f3596",
+    "/assets/party-dart-games/assets/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/assets/party-dart-games/assets/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/assets/party-dart-games/assets/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/assets/party-dart-games/assets/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/assets/party-dart-games/assets/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/assets/party-dart-games/assets/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/assets/party-dart-games/assets/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/assets/party-dart-games/assets/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/assets/party-dart-games/assets/logo.jpeg": "901e1ec4c06d108a91668740b1234f66436b2336",
+    "/assets/party-dart-games/assets/logo.png": "abce1b9a9769f55745ec68d93ae148b7b2f11326",
+    "/assets/party-dart-games/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/assets/party-dart-games/index.html": "938780971ecc24e47ab3b0f95a2b3d85cf3a1afd",
+    "/assets/party-dart-games/main-TGC4EZRW.js": "141a7c997d994a07d48a1e163e42c1b3b55ffb81",
+    "/assets/party-dart-games/manifest.webmanifest": "ef496e5b582f5469661469e23b5c9e0d3d2ce3e8",
+    "/assets/party-dart-games/media/logo-FFJYVD4V.png": "abce1b9a9769f55745ec68d93ae148b7b2f11326",
+    "/assets/party-dart-games/polyfills-LZBJRJJE.js": "fda1c82c5c620f1fa442f687b3df45a037f6fcc9",
+    "/assets/party-dart-games/styles-22P5WYGW.css": "d84babcab949e9e00d5cedf79214fec78bd75c28"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
