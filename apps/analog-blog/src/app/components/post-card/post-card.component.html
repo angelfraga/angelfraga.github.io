@@ -1,0 +1,25 @@
+<div class="post-card card">
+    <div class="card-header bs-primary">
+        <div class="post-card-image">
+            <img src="{{ post?.coverImage }}">
+        </div>
+    </div>
+    <div class="card-body">
+        <a class="card-title"
+           [routerLink]="['/posts', post?.lang, post?.slug]">
+            <h5>{{ post?.title}}</h5>
+        </a>
+        <h6>
+            <small>Published: {{ post?.date| date }}</small>
+        </h6>
+        @if(post?.description) {
+        <p class="card-text">
+            {{ post?.description }}
+        </p>
+        }
+    </div>
+    <div class="card-footer">
+        <a [routerLink]="['/posts', post?.lang, post?.slug]"
+           class="btn btn-primary">See more</a>
+    </div>
+</div>

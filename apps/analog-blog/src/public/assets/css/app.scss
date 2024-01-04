@@ -1,0 +1,157 @@
+@import url("../../../app/_sass/main.scss");
+
+@import "./flag-icons.min.css";
+
+:root {
+    --primary-h: 355;
+    --primary-s: 100%;
+    --primary-l: 38%;
+    --bs-primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));
+    --bs-light: white;
+    --bs-dark: #212529;
+    --bs-white: white;
+    --transparency: rgba(0, 0, 0, 0.4);
+}
+
+body {
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "Noto Sans",
+        "Liberation Sans",
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji";
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    color: var(--bs-dark);
+    background-color: var(--bs-light);
+    margin: 0;
+    &::-webkit-scrollbar {
+        height: 4px;
+        width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.26);
+    }
+    &.dark {
+        --primary-s: 70%;
+        --bs-light: hsl(210, 11%, 16%);
+        --bs-dark: hsl(0, 0%, 100%);
+        --transparency: rgba(255, 255, 255, 0.4);
+    }
+}
+
+.main {
+    flex: 1;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+figure {
+    display: block;
+    position: relative;
+    max-height: 400px;
+    overflow-y: hidden;
+    cursor: pointer;
+}
+
+figure:focus {
+    max-height: initial;
+}
+
+figure img {
+    width: 100%;
+}
+
+iframe {
+    width: 100%;
+    min-height: 400px;
+}
+
+figure.highlight {
+    font-size: 18px;
+    pre {
+        margin-bottom: 0;
+    }
+}
+
+.lineno {
+    color: grey;
+    border-right: 1px solid grey;
+    width: 1.5em;
+    text-align: center;
+}
+
+blockquote {
+    border-left: 8px solid var(--bs-primary);
+    margin-left: 0;
+    padding: 1em;
+}
+
+/* layout */
+
+.container {
+    width: 70vw;
+    margin: auto;
+    max-width: 1320px;
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        width: calc(100% - 48px) !important;
+    }
+}
+
+.row {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 24px;
+    & > div {
+        justify-content: space-around;
+    }
+}
+
+.col {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .col-xs-12 {
+        width: 100%;
+    }
+}
+
+@media (min-width: 576px) {
+    .col-sm-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+}
+
+@media (min-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+}
+
+// Utils
+
+.text-center {
+    text-align: center;
+}
+
+.text-light {
+    color: white;
+}

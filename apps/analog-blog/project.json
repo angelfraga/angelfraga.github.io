@@ -1,0 +1,68 @@
+{
+  "name": "analog-blog",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "./apps/analog-blog/src",
+  "targets": {
+    "build": {
+      "executor": "@analogjs/platform:vite",
+      "outputs": [
+        "{options.outputPath}",
+        "{workspaceRoot}/dist/apps/analog-blog/.nitro",
+        "{workspaceRoot}/dist/apps/analog-blog/ssr",
+        "{workspaceRoot}/dist/apps/analog-blog/analog"
+      ],
+      "options": {
+        "main": "apps/analog-blog/src/main.ts",
+        "configFile": "apps/analog-blog/vite.config.ts",
+        "outputPath": "dist/apps/analog-blog/client",
+        "tsConfig": "apps/analog-blog/tsconfig.app.json"
+      },
+      "defaultConfiguration": "production",
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "sourcemap": false,
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@analogjs/platform:vite-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "analog-blog:build",
+        "port": 4200
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "analog-blog:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "analog-blog:build:production"
+        }
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "analog-blog:build"
+      }
+    },
+    "test": {
+      "executor": "@analogjs/platform:vitest",
+      "outputs": ["{projectRoot}/coverage"]
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["./apps/analog-blog/**/*.{ts,html}"]
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,7 @@
+@import url("./public/assets/css/app.scss");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap')
+
+@import "prismjs/themes/prism-okaidia.min.css";
+@import "prismjs/plugins/toolbar/prism-toolbar.css";
+@import "prismjs/plugins/diff-highlight/prism-diff-highlight.css";
+

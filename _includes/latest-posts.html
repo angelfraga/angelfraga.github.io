@@ -1,9 +1,0 @@
-<h4>Latest Posts</h4>
-
-<div class="posts"
-     style="--posts-columns: {{ include.columns }}">
-    {% assign en_posts = site.posts | where: "lang", "en" %}
-    {% for post in en_posts limit: include.limit or 3 %}
-    {% include post-card.html post=post %}
-    {% endfor %}
-</div>

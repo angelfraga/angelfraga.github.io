@@ -1,0 +1,29 @@
+<div class="hero">
+    @if(hero) {
+
+    <div class="container hero-body">
+        <div class="row align-items-center">
+            @if(hero.image) {
+            <div class="col-12 col-sm-3">
+                <img src="{{ hero.image }}"
+                     class="hero-image {{ hero.cssClass }}"
+                     alt="{{ hero.title }}">
+            </div>
+            }
+            <div class="col text-center">
+                <h1>{{ hero.title }}</h1>
+                <h2>{{ hero.subTitle }}</h2>
+            </div>
+        </div>
+    </div>
+    }
+
+    @if(hero?.waves) {
+
+    <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    }
+</div>
