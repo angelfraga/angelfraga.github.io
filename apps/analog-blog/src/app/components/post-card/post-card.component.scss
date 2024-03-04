@@ -1,28 +1,30 @@
 :host {
     position: relative;
 }
+
 .post-card {
     height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 5px;
+
     .card-header {
-        background-color: var(--bs-primary);
+        background-color: hsl(240deg 6.25% 6.27%);
         position: relative;
         padding: 0;
         height: 50px;
         border-radius: 5px 5px 0 0;
     }
+
     .post-card-image {
         width: 50px;
         height: 50px;
-        border: 2px solid var(--bs-light);
+        border: none;
         transform: rotate(45deg);
         border-radius: 5px;
-        background: var(--bs-dark);
         overflow: hidden;
         position: absolute;
         top: 25px;
         left: 25px;
+
         img {
             position: absolute;
             top: -25%;
@@ -32,16 +34,20 @@
             transform: rotate(-45deg);
         }
     }
+
     .card-body {
         background-position: bottom right;
         background-repeat: no-repeat;
         background-size: 300px auto;
-        padding: calc(1em + 25px) 1em 1em 1em;
+        padding: 1em;
+
         .card-title {
-            color: var(--bs-dark);
+            color: white;
             text-decoration: none;
+            font-size: 1.5em;
+
             &:hover {
-                color: var(--bs-primary);
+                color: white;
                 text-decoration: underline;
             }
         }
@@ -52,8 +58,9 @@
         border-top: 0px;
         display: flex;
         padding: 1em;
+
         a {
-            color: var(--bs-light);
+            color: white;
             padding: 0.5em;
             border-radius: 5px;
             text-decoration: none;

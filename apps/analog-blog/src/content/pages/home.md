@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 path: home
 name: Home
 menu: 0
@@ -9,14 +9,21 @@ config:
     subTitle: Full Stack Software Developer
     image: /assets/images/profile.jpg
     cssClass: hero-image-avatar
-    waves: true
+    waves: false
     h: 355
     s: 100%
     l: 38%
 ---
 
+
+
+<div style="text-align: center">
+
 # Welcome to my site.
 
-I'm a Full Stack Software Developer focused in web technologies with large experience with front-end stack such as Angular or Vue and back-end Dot Net & Php.
+I'm a Full Stack Software Developer focused on web technologies. <br>
+In the last years I have been focusing with Angular, Php, C# and k8s.
 
-This site is made with Analog and hosted by github pages .
+I use to describing myself as a front-end ops and functional programming enthusiast.
+ 
+</div>

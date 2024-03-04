@@ -1,9 +1,4 @@
-<div class="post-card card">
-    <div class="card-header bs-primary">
-        <div class="post-card-image">
-            <img src="{{ post?.coverImage }}">
-        </div>
-    </div>
+<div class="post-card card  fancy-bg">
     <div class="card-body">
         <a class="card-title"
            [routerLink]="['/posts', post?.lang, post?.slug]">
@@ -20,6 +15,6 @@
     </div>
     <div class="card-footer">
         <a [routerLink]="['/posts', post?.lang, post?.slug]"
-           class="btn btn-primary">See more</a>
+           class="btn fancy-text">See more</a>
     </div>
 </div>

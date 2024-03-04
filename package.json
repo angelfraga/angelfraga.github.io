@@ -11,13 +11,13 @@
   "author": "angelfraga",
   "packageManager": "pnpm@8.15.4",
   "devDependencies": {
-    "@analogjs/platform": "^0.2.0",
+    "@analogjs/platform": "^0.2.41",
     "@angular-devkit/build-angular": "^17.2.0",
     "@angular/cli": "^17.2.0",
     "@angular/compiler-cli": "^17.2.0",
     "@nx/vite": "~18.0.0",
-    "nx": "~18.0.0",
     "jsdom": "^22.1.0",
+    "nx": "~18.0.0",
     "typescript": "~5.3.0",
     "vite": "~5.0.0",
     "vitest": "^1.3.1"
@@ -26,8 +26,8 @@
     "targets": {}
   },
   "dependencies": {
-    "@analogjs/content": "^0.2.0",
-    "@analogjs/router": "^0.2.0",
+    "@analogjs/content": "^0.2.41",
+    "@analogjs/router": "^0.2.41",
     "@angular/animations": "^17.2.0",
     "@angular/common": "^17.2.0",
     "@angular/compiler": "^17.2.0",

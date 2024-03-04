@@ -13,6 +13,7 @@ import { PageService } from '../../services/page.service';
     `
       :host {
         z-index: 2; 
+         
       }
       :host .container {
         height: 54px;

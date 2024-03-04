@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core"
+import { Component, Input, ViewEncapsulation } from "@angular/core"
 import { DefaultLayoutComponent } from "./default.component";
 import { RouterModule } from "@angular/router";
 import { PostAttributes } from "../services/post.service";
@@ -27,16 +27,37 @@ import LastPostsComponent from "../components/last-post/last-post.component";
             <div class="row">
                 <div class="col">
                     <ng-content></ng-content>
-                </div> 
-                <div class="col-xs-12 col-md-4">
-                    <h2>Other posts</h2>
-                    <afp-blog-last-posts></afp-blog-last-posts>
-                </div> 
+                </div>
             </div>
         </div>
     </afp-blog-default>
-    `
+    `,
+    encapsulation: ViewEncapsulation.None,
+    styles: [
+        `
+        nav {
+            background: #0f0f11;
+        }
+        .hero {
+            background: none !important;
+        }
+        .hero:before {
+            content: "";
+            background: linear-gradient(130deg, #ff6c00, #af002d 41.07%, #980bff 76.05%);
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            z-index: -1;
+            border-radius: 12px;
+        }
+        `
+    ]
 })
 export class PostLayoutComponent {
     @Input() attributes!: PostAttributes | Record<string, never>;
+    get config() {
+        return { ...this.attributes.config, hero: undefined }
+    }
 }

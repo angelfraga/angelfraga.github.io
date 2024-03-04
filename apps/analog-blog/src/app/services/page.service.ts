@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 
 
-export type PageLayout = 'default' | 'page';
+export type PageLayout = 'default' | 'page' | 'home';
 
 export interface Hero {
     title?: string;

@@ -2,6 +2,7 @@
     0% {
         transform: translateX(0%);
     }
+
     100% {
         transform: translateX(-100%);
     }
@@ -11,22 +12,23 @@
     padding-top: 54px;
     margin-top: -54px;
     color: var(--bs-white);
-    background-image: linear-gradient(
-        145deg,
-        hsla(var(--primary-h), var(--primary-s), var(--primary-l), 1) 0%,
-        hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.75) 25%,
-        hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.9) 100%
-    );
+    background: #0f0f11;
     position: relative;
+
     .hero-image {
         width: 100%;
         box-sizing: border-box;
         text-align: center;
     }
+
     .hero-image-avatar {
         border-radius: 50%;
         box-shadow: 3px 6px 20px 8px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(to right, red, purple, red);
+        background-repeat: inherit;
+        border: 5px solid transparent;
     }
+
     .hero-body {
         padding-top: 9rem;
         padding-bottom: 9rem;
@@ -35,7 +37,8 @@
     }
 
     .ocean {
-        height: 80px; /* change the height of the waves here */
+        height: 80px;
+        /* change the height of the waves here */
         width: 100%;
         position: absolute;
         bottom: 0;
@@ -70,9 +73,11 @@
         0% {
             transform: translateX(0);
         }
+
         50% {
             transform: translateX(-25%);
         }
+
         100% {
             transform: translateX(-50%);
         }

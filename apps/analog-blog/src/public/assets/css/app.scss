@@ -33,16 +33,19 @@ body {
     height: 100%;
     position: absolute;
     width: 100%;
-    color: var(--bs-dark);
-    background-color: var(--bs-light);
+    color: white;
+    background-color: #0f0f11;
     margin: 0;
+
     &::-webkit-scrollbar {
         height: 4px;
         width: 4px;
     }
+
     &::-webkit-scrollbar-thumb {
         background: rgba(0, 0, 0, 0.26);
     }
+
     &.dark {
         --primary-s: 70%;
         --bs-light: hsl(210, 11%, 16%);
@@ -80,6 +83,7 @@ iframe {
 
 figure.highlight {
     font-size: 18px;
+
     pre {
         margin-bottom: 0;
     }
@@ -117,7 +121,8 @@ blockquote {
     position: relative;
     flex-wrap: wrap;
     gap: 24px;
-    & > div {
+
+    &>div {
         justify-content: space-around;
     }
 }
@@ -154,4 +159,23 @@ blockquote {
 
 .text-light {
     color: white;
+}
+
+.fancy-text {
+    background: -webkit-linear-gradient(#ff0034, #910cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+}
+
+.fancy-bg:before {
+    content: "";
+    background: linear-gradient(130deg, #ff6c00, #af002d 41.07%, #980bff 76.05%);
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    z-index: -1;
+    border-radius: 12px;
 }

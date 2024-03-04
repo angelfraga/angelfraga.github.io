@@ -7,21 +7,28 @@ import { DefaultPageAttributes } from "../services/page.service";
 
 @Component({
     standalone: true,
-    selector: 'afp-blog-default',
+    selector: 'afp-blog-home',
     imports: [CommonModule, HeaderComponent, HeroComponent, FooterComponent],
     template: `
     <afp-blog-header></afp-blog-header> 
-        <afp-blog-hero *ngIf="config?.hero" [hero]="config?.hero" ></afp-blog-hero> 
-        <section class="section main d-flex roboto-regular container">
+        <afp-blog-hero [hero]="config?.hero" ></afp-blog-hero> 
+        <section class="section main d-flex roboto-regular container fancy-bg">
             <ng-content></ng-content>
         </section>
     <afp-blog-footer></afp-blog-footer>
     `,
     styles: [
-        `:host { display: flex; height: 100%; flex-direction: column; }`
+        `
+        :host { display: flex; height: 100%; flex-direction: column; }
+        .main {
+            position: relative;
+            width: 100%;
+            max-width: none;
+        }
+        `
     ]
 })
-export class DefaultLayoutComponent {
+export class HomeLayoutComponent {
     @Input() config?: Partial<DefaultPageAttributes['config']>;
 
     @HostBinding('style') get styles() {
