@@ -50,15 +50,16 @@ jobs:
 
       - name: Build
         run: pnpm nx build analog-blog
-      - name: Checkout
-        uses: actions/checkout@v4
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: 'dist/apps/analog-blog/analog/public'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
