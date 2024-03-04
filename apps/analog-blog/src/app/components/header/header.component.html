@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand fancy-text"
+           [routerLink]="['/']">
+            A
+        </a>
+        <ul class="navbar-nav">
+            @for (item of links; track $index) {
+            <li class="nav-item">
+                <a [routerLink]="['/' + item.path]"
+                   class="nav-link fancy-text"
+                   [routerLinkActive]="'active'">{{ item.label }}</a>
+            </li>
+            }
+        </ul>
+    </div>
+</nav>

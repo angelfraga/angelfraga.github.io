@@ -1,0 +1,35 @@
+.navbar {
+    padding: 0;
+    box-shadow: -1px 0px 5px 1px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    color: var(--bs-light);
+    align-items: center;
+}
+.navbar .container {
+    padding: 0;
+}
+.navbar-nav {
+    flex: 1;
+}
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+    color: var(--bs-light) !important;
+    background: var(--transparency);
+}
+.nav-link {
+    padding: 0 0 2px 0;
+    line-height: 46px;
+    min-height: 46px;
+    border-bottom: 2px solid var(--bs-light);
+    &:hover,
+    &.active {
+        border-bottom: 2px solid var(--bs-primary);
+    }
+}

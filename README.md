@@ -1,7 +1,8 @@
-# Quick start
+# Intro
 
-## Launch local
+This is my Nx monorepo.
 
-```
-bundle exec jekyll serve --livereload
-```
+About monorepos https://monorepo.tools
+About Nx https://nx.dev
+
+

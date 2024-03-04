@@ -1,0 +1,48 @@
+{% if include.totalPages > 1 %}
+<nav aria-label="Posts pagination">
+    <ul class="pagination justify-content-center">
+
+        {% if paginator.previous_page %}
+        <li class="page-item">
+            <a class="page-link"
+               href="{{ paginator.previous_page_path | relative_url }}">Previous</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled ">
+            <a class="page-link">Previous</a>
+        </li>
+        {% endif %}
+
+        {% for page in (1..include.totalPages) %}
+        <li class="page-item">
+            {% if page == paginator.page %}
+        <li class="page-item active">
+            <a class="page-link">{{ page }}</a>
+        </li>
+        {% elsif page == 1 %}
+        <li class="page-item">
+            <a class="page-link"
+               href="{{ '/blog' | relative_url }}">{{ page }}</a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link"
+               href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+
+        {% if totalPages > paginator.page
+        %}
+        <li class="page-item">
+            <a class="page-link"
+               href="{{ paginator.next_page_path | relative_url }}">Next</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
