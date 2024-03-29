@@ -2,5 +2,8 @@
     "terminal.integrated.shell.windows": "wsl.exe",
     "html.format.wrapAttributes": "force-aligned",
     "editor.formatOnSave": true,
-    "typescript.tsdk": "node_modules/typescript/lib"
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "cSpell.words": [
+        "Tetris"
+    ]
 }

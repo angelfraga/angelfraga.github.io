@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8" />
+      <title>TetrisGame</title>
+      <base href="/" />
+
+      <meta name="viewport"
+            content="width=device-width, initial-scale=1" />
+      <link rel="icon"
+            type="image/x-icon"
+            href="/favicon.ico" />
+      <link rel="stylesheet"
+            href="/src/styles.css" />
+</head>
+
+<body>
+      <tetris-root>
+            <tetris-header></tetris-header>
+            <tetris-main>
+                  <canvas id="tetrisCanvas"></canvas>
+                  <textarea id="tetrisText"
+                            readonly></textarea>
+                  <div id="tetrisHTML"></div>
+                  <div id="next"></div>
+            </tetris-main>
+      </tetris-root>
+
+
+      <script type="module"
+              src="/src/main.ts"></script>
+</body>
+
+</html>

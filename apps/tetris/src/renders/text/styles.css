@@ -1,0 +1,12 @@
+#tetrisText {
+  line-height: 1em;
+  font-size: 40px;
+  padding: 0px;
+  overflow: hidden;
+  resize: none;
+  width: 14em !important;
+  height: 800px;
+  font-family: monospace;
+  background: rgb(34, 34, 34);
+  display: none;
+}

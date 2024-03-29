@@ -1,0 +1,75 @@
+#tetrisHTML {
+  display: none;
+  width: 400px;
+  height: 800px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  grid-template-columns: repeat(10, 1fr);
+  position: relative;
+}
+
+.cell {
+  box-sizing: border-box;
+  border: 1px solid rgb(15, 15, 15);
+  background: rgb(34, 34, 34);
+}
+.cell.IBlock {
+  background-color: #00ffff;
+  box-shadow: inset 1px 1px 8px #0d8888;
+  border: none;
+}
+.cell.OBlock {
+  background-color: #f0f000;
+  box-shadow: inset 1px 1px 8px #9e9e15;
+  border: none;
+}
+.cell.LBlock {
+  background-color: #f0a000;
+  box-shadow: inset 1px 1px 8px #a16c02;
+  border: none;
+}
+.cell.JBlock {
+  background-color: #0000f1;
+  box-shadow: inset 1px 1px 8px #00002c;
+  border: none;
+}
+.cell.TBlock {
+  background-color: #a000f0;
+  box-shadow: inset 1px 1px 8px #460069;
+  border: none;
+}
+.cell.ZBlock {
+  background-color: #f00000;
+  box-shadow: inset 1px 1px 8px #8a0101;
+  border: none;
+}
+.cell.SBlock {
+  background-color: #00f000;
+  box-shadow: inset 1px 1px 8px #027a02;
+  border: none;
+}
+
+.instructions {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  font-size: 32px;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  width: 100%;
+  color: #b0f000;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#next {
+  display: grid;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+}

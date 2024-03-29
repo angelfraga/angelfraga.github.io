@@ -1,0 +1,17 @@
+@import url("./renders/canvas/styles.css");
+@import url("./renders/html/styles.css");
+@import url("./renders/text/styles.css");
+@import url("./renders/multi/styles.css");
+
+tetris-root {
+  display: block; 
+}
+
+tetris-header {
+  display: block;
+}
+
+tetris-main {
+  display: flex;
+  gap: 64px;
+}
