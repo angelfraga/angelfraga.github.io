@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Angel Fraga</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="palette-dotnet">
+
+    <header class="wrap">
+      <div class="nav">
+        <a class="brand" href="index.html"><span class="avatar-sm">AF</span>Angel Fraga</a>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html" aria-current="page">About</a></li>
+          </ul>
+        </nav>
+        <div class="actions">
+          <div class="palette-wrap">
+            <button class="palette-btn" id="palette-btn" onclick="togglePaletteFlyout(event)" aria-haspopup="true" aria-expanded="false">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="label" id="palette-label">Palette</span>
+            </button>
+            <div class="flyout" id="flyout" role="menu">
+              <div class="label">Color palette</div>
+              <button class="pal-option" data-palette="dotnet" onclick="applyPalette('dotnet')" role="menuitemradio">
+                <span class="dots"><i style="background:#512bd4"></i><i style="background:#8b5cf6"></i><i style="background:#22d3ee"></i></span>
+                .NET
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="angular" onclick="applyPalette('angular')" role="menuitemradio">
+                <span class="dots"><i style="background:#c2185b"></i><i style="background:#e91e63"></i><i style="background:#f48fb1"></i></span>
+                Angular
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="ai" onclick="applyPalette('ai')" role="menuitemradio">
+                <span class="dots"><i style="background:#f97316"></i><i style="background:#fb923c"></i><i style="background:#fbbf24"></i></span>
+                AI
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="electron" onclick="applyPalette('electron')" role="menuitemradio">
+                <span class="dots"><i style="background:#1f6fb2"></i><i style="background:#3595d6"></i><i style="background:#9feaf9"></i></span>
+                Electron
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="architecture" onclick="applyPalette('architecture')" role="menuitemradio">
+                <span class="dots"><i style="background:#0f3d91"></i><i style="background:#2563eb"></i><i style="background:#67e8f9"></i></span>
+                Architecture
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="testing" onclick="applyPalette('testing')" role="menuitemradio">
+                <span class="dots"><i style="background:#16a34a"></i><i style="background:#4ade80"></i><i style="background:#facc15"></i></span>
+                Testing
+                <span class="check">✓</span>
+              </button>
+            </div>
+          </div>
+          <button class="toggle" id="theme" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="page-head">
+        <h1>About me</h1>
+        <p class="lede">
+          Software developer with a soft spot for the modern web.
+        </p>
+      </section>
+
+      <section class="about-grid">
+        <div>
+          <h2>Building things that ship</h2>
+          <p>
+            I'm Angel Fraga, a software developer focused on the frontend and the
+            boundaries around it — Angular, TypeScript and authoring the backend
+            that fits. I care about performance, accessibility and code that the
+            next person actually enjoys reading.
+          </p>
+          <p>
+            When I'm not shipping, I write about the craft: design systems,
+            monorepos, desktop apps and where AI genuinely helps a working
+            developer. This site is where all of that lands.
+          </p>
+
+          <h2 style="margin-top: 34px">What I work with</h2>
+          <div class="tech-list">
+            <span class="chip">Angular</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">Nx</span>
+            <span class="chip">.NET</span>
+            <span class="chip">Electron</span>
+            <span class="chip">Vite</span>
+            <span class="chip">Signals</span>
+            <span class="chip">Vitest</span>
+            <span class="chip">Storybook</span>
+          </div>
+        </div>
+
+        <aside class="stat">
+          <h2 style="font-size: 1.2rem">Timeline</h2>
+          <div class="timeline">
+            <div>
+              <b>Senior Software Engineer</b>
+              <span>2023 — present</span>
+              <p>Leading a web platform team, mentoring and setting frontend direction.</p>
+            </div>
+            <div>
+              <b>Full-stack Developer</b>
+              <span>2019 — 2023</span>
+              <p>Shipping Angular and .NET products across domains.</p>
+            </div>
+            <div>
+              <b>Started building for the web</b>
+              <span>2016</span>
+              <p>First `&lt;div&gt;`, first deploy, first bug that took three days.</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <div class="page-footer-margin"></div>
+    </main>
+
+    <footer>
+      <div class="socials">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">X / Twitter</a>
+        <a href="#">RSS Feed</a>
+        <a href="#">Email</a>
+      </div>
+      <p>© 2026 Angel Fraga · Brutal theme</p>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

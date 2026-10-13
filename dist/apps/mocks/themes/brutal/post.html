@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rethinking state management — Angel Fraga</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="palette-dotnet">
+    <header class="wrap">
+      <div class="nav">
+        <a class="brand" href="index.html"><span class="avatar-sm">AF</span>Angel Fraga</a>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html" aria-current="page">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="actions">
+          <div class="palette-wrap">
+            <button class="palette-btn" id="palette-btn" onclick="togglePaletteFlyout(event)" aria-haspopup="true" aria-expanded="false">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="label" id="palette-label">Palette</span>
+            </button>
+            <div class="flyout" id="flyout" role="menu">
+              <div class="label">Color palette</div>
+              <button class="pal-option" data-palette="dotnet" onclick="applyPalette('dotnet')" role="menuitemradio">
+                <span class="dots"><i style="background:#512bd4"></i><i style="background:#8b5cf6"></i><i style="background:#22d3ee"></i></span>
+                .NET
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="angular" onclick="applyPalette('angular')" role="menuitemradio">
+                <span class="dots"><i style="background:#c2185b"></i><i style="background:#e91e63"></i><i style="background:#f48fb1"></i></span>
+                Angular
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="ai" onclick="applyPalette('ai')" role="menuitemradio">
+                <span class="dots"><i style="background:#f97316"></i><i style="background:#fb923c"></i><i style="background:#fbbf24"></i></span>
+                AI
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="electron" onclick="applyPalette('electron')" role="menuitemradio">
+                <span class="dots"><i style="background:#1f6fb2"></i><i style="background:#3595d6"></i><i style="background:#9feaf9"></i></span>
+                Electron
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="architecture" onclick="applyPalette('architecture')" role="menuitemradio">
+                <span class="dots"><i style="background:#0f3d91"></i><i style="background:#2563eb"></i><i style="background:#67e8f9"></i></span>
+                Architecture
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="testing" onclick="applyPalette('testing')" role="menuitemradio">
+                <span class="dots"><i style="background:#16a34a"></i><i style="background:#4ade80"></i><i style="background:#facc15"></i></span>
+                Testing
+                <span class="check">✓</span>
+              </button>
+            </div>
+          </div>
+          <button class="toggle" id="theme" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <a class="back-link" href="blog.html">← All posts</a>
+
+      <article>
+        <header class="post-head">
+          <span class="chip">Architecture</span>
+          <h1>Rethinking state management for large Angular apps</h1>
+          <div class="meta"><span>Angel Fraga</span><span>·</span><span>Sep 18, 2026</span><span>·</span><span>12 min read</span></div>
+        </header>
+
+        <div class="post-cover">ANGULAR<br />STATE</div>
+
+        <div class="post-body">
+          <p>
+            For years the default answer to "how do we share state?" in Angular
+            was a store library. Those tools earned their place, but as
+            applications grow they quietly push complexity into places you stop
+            noticing — until you do. This post is about what that looks like and
+            what a signals-first default can do instead.
+          </p>
+          <p>
+            I'm not arguing stores have no role. But the interesting question is
+            what small fraction of your app actually needs one. Most state is
+            local to a component tree, and treating it all the same way is where
+            the cost creeps in.
+          </p>
+
+          <h2>Where stores start to hurt</h2>
+          <p>
+            A store starts honest: one well-typed action, one selector, an easy
+            unit test. After a few features, the action count explodes, selectors
+            fan out across feature modules, and every screen now imports a
+            dependency nobody can fully hold in their head.
+          </p>
+          <blockquote>
+            The most expensive line of code you can write is an artificial
+            boundary that makes a two-file problem into a fifty-file problem.
+          </blockquote>
+          <p>
+            None of this is anyone's fault. It's the natural shape of a global
+            namespace: convenient at the edges, expensive in the middle.
+          </p>
+
+          <h2>A signals-first default</h2>
+          <p>
+            Angular's signals give you fine-grained reactivity with plain
+            semantics. Component state stays co-located with the component, and
+            it composes through <code>computed</code> and effect boundaries that
+            are easy to reason about.
+          </p>
+          <pre><code>import { signal } from '@angular/core';
+
+export class CartStore {
+  readonly items = signal([]);
+
+  readonly total = computed(() =&gt;
+    this.items().reduce((sum, item) =&gt; sum + item.price, 0)
+  );
+
+  add(item) {
+    this.items.update((all) =&gt; [...all, item]);
+  }
+}</code></pre>
+          <p>
+            The rules stay small: state belongs near the feature that owns it;
+            lift it only when two unrelated branches actually need it; measure
+            before you introduce a dependency.
+          </p>
+
+          <ul>
+            <li>Default to signals inside the component or feature.</li>
+            <li>Lift to a lightweight, injectable service when shared.</li>
+            <li>Reach for a global store for cross-cutting, app-wide concerns.</li>
+            <li>Keep actions near the UI that triggers them.</li>
+          </ul>
+
+          <h2>What stays in a store</h2>
+          <p>
+            Some things genuinely belong in a global store: identity/session,
+            feature flags, capability toasts. Those are shared, coarse-grained
+            and few. Everything else is usually fine closer to home. The
+            refactor rarely removes code — it moves it somewhere better.
+          </p>
+          <p>
+            If you push back on the next "let's spin up a store for this" request
+            even once a week, you'll ship simpler apps and thank yourself in six
+            months.
+          </p>
+        </div>
+
+        <footer class="post-foot">
+          <div class="tags">
+            <span class="chip">Angular</span>
+            <span class="chip">Signals</span>
+            <span class="chip">Architecture</span>
+          </div>
+          <div class="share">
+            <a href="#">Share</a>
+            <a href="#">X</a>
+            <a href="#">LinkedIn</a>
+          </div>
+        </footer>
+
+        <aside class="post-author">
+          <span class="avatar-sm">AF</span>
+          <div>
+            <b>Angel Fraga</b>
+            <p>Software developer writing about the modern web.</p>
+          </div>
+        </aside>
+
+        <nav class="post-nav">
+          <a class="card" href="post.html">
+            <span class="chip">Previous · Performance</span>
+            <h3>Shipping less JavaScript</h3>
+          </a>
+          <a class="card next" href="post.html">
+            <span class="chip">Next · Testing</span>
+            <h3>A practical testing pyramid</h3>
+          </a>
+        </nav>
+      </article>
+
+      <div class="page-footer-margin"></div>
+    </main>
+
+    <footer>
+      <div class="socials">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">X / Twitter</a>
+        <a href="#">RSS Feed</a>
+        <a href="#">Email</a>
+      </div>
+      <p>© 2026 Angel Fraga · Brutal theme</p>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

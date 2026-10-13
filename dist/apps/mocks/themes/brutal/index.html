@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Angel Fraga — Brutal</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="palette-dotnet">
+
+    <header class="wrap">
+      <div class="nav">
+        <a class="brand" href="index.html"><span class="avatar-sm">AF</span>Angel Fraga</a>
+        <nav>
+          <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="actions">
+          <div class="palette-wrap">
+            <button class="palette-btn" id="palette-btn" onclick="togglePaletteFlyout(event)" aria-haspopup="true" aria-expanded="false">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="label" id="palette-label">Palette</span>
+            </button>
+            <div class="flyout" id="flyout" role="menu">
+              <div class="label">Color palette</div>
+              <button class="pal-option" data-palette="dotnet" onclick="applyPalette('dotnet')" role="menuitemradio">
+                <span class="dots"><i style="background:#512bd4"></i><i style="background:#8b5cf6"></i><i style="background:#22d3ee"></i></span>
+                .NET
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="angular" onclick="applyPalette('angular')" role="menuitemradio">
+                <span class="dots"><i style="background:#c2185b"></i><i style="background:#e91e63"></i><i style="background:#f48fb1"></i></span>
+                Angular
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="ai" onclick="applyPalette('ai')" role="menuitemradio">
+                <span class="dots"><i style="background:#f97316"></i><i style="background:#fb923c"></i><i style="background:#fbbf24"></i></span>
+                AI
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="electron" onclick="applyPalette('electron')" role="menuitemradio">
+                <span class="dots"><i style="background:#1f6fb2"></i><i style="background:#3595d6"></i><i style="background:#9feaf9"></i></span>
+                Electron
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="architecture" onclick="applyPalette('architecture')" role="menuitemradio">
+                <span class="dots"><i style="background:#0f3d91"></i><i style="background:#2563eb"></i><i style="background:#67e8f9"></i></span>
+                Architecture
+                <span class="check">✓</span>
+              </button>
+              <button class="pal-option" data-palette="testing" onclick="applyPalette('testing')" role="menuitemradio">
+                <span class="dots"><i style="background:#16a34a"></i><i style="background:#4ade80"></i><i style="background:#facc15"></i></span>
+                Testing
+                <span class="check">✓</span>
+              </button>
+            </div>
+          </div>
+          <button class="toggle" id="theme" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <div class="avatar">AF</div>
+        <h1>Hello, I'm Angel — I build <span class="grad">delightful software</span>.</h1>
+        <p class="lede">
+          Software developer focused on the modern web. I write about Angular,
+          TypeScript, performance and the craft of building products people love.
+        </p>
+      </section>
+
+      <div class="section-head">
+        <h2>Featured writing</h2>
+        <a href="blog.html">All posts →</a>
+      </div>
+
+      <section class="grid">
+        <a class="card feature" href="post.html">
+          <span class="read">↗</span>
+          <span class="chip">Deep dive</span>
+          <h3>Rethinking state management for large Angular apps</h3>
+          <p>
+            Signals, stores and the patterns that actually keep complexity in
+            check as your application grows beyond a handful of features.
+          </p>
+          <div class="meta"><span>Sep 18, 2026</span><span>·</span><span>12 min read</span></div>
+        </a>
+
+        <article class="card">
+          <span class="read">↗</span>
+          <span class="chip">Performance</span>
+          <h3>Shipping less JavaScript</h3>
+          <p>Strategies for smaller bundles without hurting developer experience.</p>
+          <div class="meta"><span>Aug 2, 2026</span><span>·</span><span>7 min</span></div>
+        </article>
+
+        <article class="card">
+          <span class="read">↗</span>
+          <span class="chip">Design</span>
+          <h3>Accessible by default</h3>
+          <p>A practical checklist for building interfaces everyone can use.</p>
+          <div class="meta"><span>Jul 14, 2026</span><span>·</span><span>6 min</span></div>
+        </article>
+
+        <article class="card">
+          <span class="read">↗</span>
+          <span class="chip">Engineering</span>
+          <h3>Monorepos, honestly</h3>
+          <p>Where Nx shines and where it adds friction — a balanced take.</p>
+          <div class="meta"><span>Jun 21, 2026</span><span>·</span><span>9 min</span></div>
+        </article>
+
+        <article class="card">
+          <span class="read">↗</span>
+          <span class="chip">Career</span>
+          <h3>Growing as a senior engineer</h3>
+          <p>Beyond code: influence, teaching and technical judgement.</p>
+          <div class="meta"><span>May 4, 2026</span><span>·</span><span>5 min</span></div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <div class="socials">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">X / Twitter</a>
+        <a href="#">RSS Feed</a>
+        <a href="#">Email</a>
+      </div>
+      <p>© 2026 Angel Fraga · Brutal theme</p>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

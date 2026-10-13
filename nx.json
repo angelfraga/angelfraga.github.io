@@ -1,4 +1,7 @@
 {
+  "cli": {
+    "packageManager": "pnpm"
+  },
   "targetDefaults": {
     "lint": {
       "inputs": [
@@ -7,24 +10,38 @@
         "{workspaceRoot}/.eslintignore",
         "{workspaceRoot}/eslint.config.js"
       ]
+    },
+    "@nx/js:swc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
     }
   },
   "affected": {
     "defaultBase": "main"
   },
   "generators": {
-    "@nx/angular:application": {
+    "@nx/web:application": {
       "style": "css",
-      "linter": "eslint",
+      "linter": "none",
       "unitTestRunner": "none",
-      "e2eTestRunner": "cypress"
-    },
-    "@nx/angular:library": {
-      "linter": "eslint",
-      "unitTestRunner": "none"
-    },
-    "@nx/angular:component": {
-      "style": "css"
+      "e2eTestRunner": "none"
     }
-  }
+  },
+  "analytics": false,
+  "plugins": [
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "devTargetName": "dev",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    }
+  ]
 }

@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en"
+      data-theme="dark">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1" />
+  <title>Angel Fraga — Under maintenance</title>
+  <meta name="description"
+        content="www.angelfraga.com is currently under maintenance." />
+  <meta name="robots"
+        content="noindex" />
+  <link rel="icon"
+        href="./favicon.ico" />
+  <style>
+    :root {
+      --bg: #080b0e;
+      --surface: #0d1216;
+      --text: #d6dfe3;
+      --muted: #7c8a92;
+      --line: #2a3640;
+      --scan: rgba(255, 255, 255, 0.025);
+      --c1: #7c3aed;
+      --c2: #06b6d4;
+      --c3: #f472b6;
+    }
+
+    html[data-theme='light'] {
+      --bg: #f6f3ec;
+      --surface: #fffdf7;
+      --text: #14181c;
+      --muted: #434c53;
+      --line: #2a3640;
+      --scan: rgba(0, 0, 0, 0.02);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::selection {
+      background: var(--c1);
+      color: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: ui-monospace, 'Cascadia Mono', 'JetBrains Mono',
+        SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+      background-color: var(--bg);
+      background-image: repeating-linear-gradient(0deg,
+          transparent 0 2px,
+          var(--scan) 2px 4px);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+      padding: 24px;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .term {
+      width: 100%;
+      max-width: 720px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: 0 0 0 1px var(--line), 0 24px 60px rgba(0, 0, 0, 0.45);
+      animation: fade-in 0.4s ease;
+    }
+
+    .term-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-bottom: 1px dashed var(--line);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .term-bar .dots {
+      display: flex;
+      gap: 6px;
+      margin-right: 4px;
+    }
+
+    .term-bar .dots i {
+      width: 11px;
+      height: 11px;
+      border-radius: 0;
+      background: var(--c1);
+    }
+
+    .term-bar .dots i:nth-child(2) {
+      background: var(--c2);
+    }
+
+    .term-bar .dots i:nth-child(3) {
+      background: var(--c3);
+    }
+
+    .term-bar .path {
+      margin-left: auto;
+    }
+
+    .toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 0;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 1rem;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .toggle:hover {
+      color: var(--c2);
+      border-color: var(--c2);
+    }
+
+    .term-body {
+      padding: 52px 44px 56px;
+    }
+
+    .avatar {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 30px;
+      border-radius: 0;
+      background: var(--bg);
+      border: 2px solid var(--line);
+      box-shadow: 0 0 34px -8px var(--c1);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--c1);
+    }
+
+    h1 {
+      font-size: clamp(1.7rem, 5vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    h1::after {
+      content: '▌';
+      margin-left: 6px;
+      color: var(--c2);
+      animation: blink 1.1s step-end infinite;
+    }
+
+    h1 .grad {
+      background: linear-gradient(120deg, var(--c1), var(--c2) 55%, var(--c3));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 22px color-mix(in srgb, var(--c1) 55%, transparent));
+    }
+
+    .lede {
+      max-width: 58ch;
+      margin: 0 auto 34px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      text-align: center;
+    }
+
+    .lede::before {
+      content: '> ';
+      color: var(--c2);
+    }
+
+    .console {
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--bg) 70%, transparent);
+      padding: 20px 22px;
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+
+    .console .row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .console .prompt {
+      color: var(--c2);
+      user-select: none;
+    }
+
+    .console .out {
+      color: var(--muted);
+    }
+
+    .console .ok {
+      color: var(--c1);
+    }
+
+    .bar {
+      margin-top: 12px;
+      height: 14px;
+      border: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bar::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      width: 38%;
+      background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3));
+      animation: slide 2.4s ease-in-out infinite;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(-105%);
+      }
+
+      100% {
+        transform: translateX(270%);
+      }
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      padding: 10px 16px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .socials a:hover {
+      border-color: var(--c2);
+      box-shadow: 0 0 18px -5px var(--c2);
+    }
+
+    footer {
+      border-top: 1px dashed var(--line);
+      padding: 22px 44px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    @media (max-width: 560px) {
+      .term-body {
+        padding: 40px 24px 44px;
+      }
+
+      footer {
+        padding: 20px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="term">
+    <div class="term-bar">
+      <span class="dots"><i></i><i></i><i></i></span>
+      <span>angelfraga.com</span>
+      <span class="path">~/maintenance</span>
+      <button class="toggle"
+              id="theme"
+              aria-label="Toggle theme">◐</button>
+    </div>
+
+    <div class="term-body">
+      <div class="avatar">AF</div>
+      <h1>Under <span class="grad">maintenance</span></h1>
+      <p class="lede">
+        I'm shipping some upgrades to make things faster and better.
+        The site will be back online shortly — thanks for your patience.
+      </p>
+
+      <div class="console">
+        <div class="row"><span class="prompt">$</span><span>deploy --env production</span></div>
+        <div class="row"><span class="out">› building assets ......... done</span></div>
+        <div class="row"><span class="out">› optimizing bundles ..... done</span></div>
+        <div class="row"><span class="out">› status: </span><span class="ok">maintenance in progress</span></div>
+        <div class="bar"></div>
+      </div>
+
+      <div class="socials">
+        <a href="https://github.com/angelfraga">GitHub</a>
+        <a href="https://www.linkedin.com/in/angel-fraga-parodi">LinkedIn</a>
+        <a href="https://stackoverflow.com/users/5831897/angel-fraga-parodi">Stackoverflow</a>
+      </div>
+    </div>
+
+    <footer>© 2021 - 2026 Angel Fraga · Back soon</footer>
+  </main>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var saved = localStorage.getItem('theme');
+      var prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+      root.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+      var toggle = document.getElementById('theme');
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var next =
+            root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>
